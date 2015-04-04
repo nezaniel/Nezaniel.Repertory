@@ -1,0 +1,12 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<tr>
+	<td><neos:link.node node="{track}">{title}</neos:link.node></td>
+	<td>{orchestration -> f:format.nl2br()}</td>
+	<td><f:if condition="{singAlong}">x</f:if></td>
+	<td>{difficulty}</td>
+	<td>{awesomeness}</td>
+	<td>{emotionType}</td>
+	<td>{key}</td>
+	<td>{state}</td>
+	<td>{annotations -> f:format.raw()}</td>
+</tr>

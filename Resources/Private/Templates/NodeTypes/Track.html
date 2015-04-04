@@ -1,0 +1,29 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<f:section name="lowerDisplay">
+	<h2>{title}</h2>
+	<f:format.nl2br><neos:contentElement.editable property="orchestration" tag="p" /></f:format.nl2br>
+	<neos:contentElement.editable property="key" tag="p" />
+	<p>{emotionType} - {awesomeness} - {difficulty}<f:if condition="{singAlong}"> - sing-along</f:if></p>
+	{main -> f:format.raw()}
+	<f:if condition="{verses}">
+		<f:then>
+			<h3>Verses</h3>
+			{verses -> f:format.raw()}
+		</f:then>
+		<f:else>
+			<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
+				<f:if condition="{node.context.workspace.name} != 'live'">
+					<h3>Verses</h3>
+					{verses -> f:format.raw()}
+				</f:if>
+			</f:security.ifAccess>
+		</f:else>
+	</f:if>
+	{downloadList -> f:format.raw()}
+</f:section>
+</body>
+</html>

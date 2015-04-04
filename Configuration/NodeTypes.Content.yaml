@@ -1,0 +1,30 @@
+'Nezaniel.Repertory:Intro':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Text'
+  ui:
+    label: 'Intro'
+
+'Nezaniel.Repertory:Verse':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Text'
+  ui:
+    label: 'Verse'
+
+'Nezaniel.Repertory:Bridge':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Text'
+  ui:
+    label: 'Bridge'
+
+'Nezaniel.Repertory:Refrain':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Refrain'
+
+'Nezaniel.Repertory:TrackList':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Track list'
+    icon: 'icon-music'

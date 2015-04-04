@@ -1,0 +1,174 @@
+'Nezaniel.Repertory:TrackAggregation':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Track Aggregation'
+    icon: 'icon-folder-open'
+
+'Nezaniel.Repertory:Track':
+  superTypes:
+    - 'TYPO3.Neos:Page'
+  childNodes:
+    verses:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Nezaniel.Repertory:Bridge': TRUE
+          'Nezaniel.Repertory:Intro': TRUE
+          'Nezaniel.Repertory:Verse': TRUE
+          'Nezaniel.Repertory:Refrain': TRUE
+  ui:
+    label: 'Track'
+    icon: 'icon-music'
+    inspector:
+      tabs:
+        track:
+          label: 'Track'
+          icon: 'icon-music'
+          position: 12
+      groups:
+        track:
+          tab: track
+          label: 'Track'
+  properties:
+    title:
+      ui:
+        inspector:
+          group: track
+    tag:
+      type: string
+      ui:
+        label: 'Asset collection tag'
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after title'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'nezaniel-repertory-tags'
+    orchestration:
+      type: string
+      ui:
+        label: 'Orchestration'
+        reloadIfChanged: TRUE
+        inlineEditable: TRUE
+        inspector:
+          group: track
+          position: 'after tag'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 5
+    key:
+      type: string
+      defaultValue: 'a'
+      ui:
+        label: 'Key'
+        reloadIfChanged: TRUE
+        inlineEditable: TRUE
+        inspector:
+          group: track
+          position: 'after orchestration'
+    awesomeness:
+      type: string
+      defaultValue: 'rare'
+      ui:
+        label: 'Awesomeness'
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after key'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              common:
+                label: 'Common'
+              uncommon:
+                label: 'Uncommon'
+              rare:
+                label: 'Rare'
+              epic:
+                label: 'Epic'
+              legendary:
+                label: 'Legendary'
+    emotionType:
+      type: string
+      defaultValue: 'party'
+      ui:
+        label: 'Type of Emotion'
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after awesomeness'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              party:
+                label: 'Party'
+              partyPosing:
+                label: 'Party Posing'
+              battle:
+                label: 'Battle'
+              dream:
+                label: 'Dream'
+              valleyOfTears:
+                label: 'Valley of Tears'
+              severe:
+                label: 'Severe'
+    difficulty:
+      type: string
+      defaultValue: 'normal'
+      ui:
+        label: 'Difficulty'
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after typeOfEmotion'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              easy:
+                label: 'Easy'
+              normal:
+                label: 'Normal'
+              hard:
+                label: 'Hard'
+    singAlong:
+      type: boolean
+      ui:
+        label: 'Sing-along'
+        inspector:
+          group: track
+          position: 'after difficulty'
+    refrain:
+      type: string
+      ui:
+        label: 'Refrain'
+        inlineEditable: TRUE
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after singAlong'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 5
+    state:
+      type: string
+      defaultValue: 'wip'
+      ui:
+        label: 'State'
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after refrain'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              wip:
+                label: 'Work in progress'
+              scoreMissing:
+                label: 'Score missing'
+              textMissing:
+                label: 'Text missing'
+              complete:
+                label: 'Complete'

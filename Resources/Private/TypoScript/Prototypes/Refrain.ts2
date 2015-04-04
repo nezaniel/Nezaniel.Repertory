@@ -1,0 +1,7 @@
+namespace: Nodes=TYPO3.Neos.NodeTypes
+namespace: Rep=Nezaniel.Repertory
+
+prototype(Rep:Refrain) < prototype(Content) {
+	refrain = ${q(documentNode).property('refrain')}
+	@process.contentElementWrapping.node = ${documentNode}
+}

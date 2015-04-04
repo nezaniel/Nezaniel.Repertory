@@ -1,0 +1,41 @@
+namespace: Nodes=TYPO3.Neos.NodeTypes
+namespace: Rep=Nezaniel.Repertory
+
+prototype(Rep:TrackList) < prototype(Content) {
+	@override.aggregationCollections = ${q(site).find('[instanceof Nezaniel.Repertory:TrackAggregation]')}
+	trackAggregations = TS:Collection {
+		collection = ${q(site).find('[instanceof Nezaniel.Repertory:TrackAggregation]')}
+
+		itemName = 'trackAggregation'
+		itemRenderer = TS:Template {
+			templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/TrackAggregation/ListItem.html'
+
+			title = ${q(trackAggregation).property('title')}
+			tracks = TS:Collection {
+				collection = ${q(trackAggregation).find('[instanceof Nezaniel.Repertory:Track]')}
+				itemName = 'track'
+				itemRenderer = TS:Template {
+					templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track/ListItem.html'
+
+					track = ${track}
+					title = ${q(track).property('title')}
+					orchestration = ${q(track).property('orchestration')}
+					singAlong = ${q(track).property('singAlong')}
+					difficulty = ${q(track).property('difficulty')}
+					awesomeness = ${q(track).property('awesomeness')}
+					key = ${q(track).property('key')}
+					emotionType = ${q(track).property('emotionType')}
+					annotations = ContentCollection {
+						@override.contentCollectionNode = ${Neos.Node.nearestContentCollection(track, 'main')}
+					}
+				}
+			}
+		}
+	}
+
+	@cache {
+		entryTags {
+			track = ${'NodeType_Nezaniel.Repertory:Track'}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+namespace: Nodes=TYPO3.Neos.NodeTypes
+namespace: Rep=Nezaniel.Repertory
+
+prototype(Rep:Verse) < prototype(Nodes:Text) {
+
+}

@@ -1,0 +1,29 @@
+<f:if condition="{trackAggregations}">
+	<f:then>
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Orchestration</th>
+					<th>Sing-along</th>
+					<th>Difficulty</th>
+					<th>Awesomeness</th>
+					<th>Type of emotion</th>
+					<th>Key</th>
+					<th>State</th>
+					<th>Annotations</th>
+				</tr>
+			</thead>
+			<tbody>
+				{trackAggregations -> f:format.raw()}
+			</tbody>
+		</table>
+	</f:then>
+	<f:else>
+		<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
+			<f:if condition="{node.context.workspace.name} != 'live'">
+				<p{attributes -> f:format.raw()}>Empty track list</p>
+			</f:if>
+		</f:security.ifAccess>
+	</f:else>
+</f:if>
