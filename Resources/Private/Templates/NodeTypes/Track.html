@@ -5,7 +5,7 @@
 <body>
 <f:section name="lowerDisplay">
 	<h2>{title}</h2>
-	<f:format.nl2br><neos:contentElement.editable property="orchestration" tag="p" /></f:format.nl2br>
+	<neos:contentElement.editable property="orchestration" tag="p" />
 	<neos:contentElement.editable property="key" tag="p" />
 	<p>{emotionType} - {awesomeness} - {difficulty}<f:if condition="{singAlong}"> - sing-along</f:if></p>
 	{main -> f:format.raw()}
