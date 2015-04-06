@@ -1,4 +1,1 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-<div{attributes -> f:format.raw()}>
-	<neos:contentElement.editable node="{track}" property="refrain" tag="p" />
-</div>
+<p>{refrain -> f:format.nl2br()}</p>
