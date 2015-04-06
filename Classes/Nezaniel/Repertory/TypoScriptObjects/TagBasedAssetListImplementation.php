@@ -42,8 +42,8 @@ class TagBasedAssetListImplementation extends TemplateImplementation {
 	 * @return void
 	 */
 	public function initializeView(FluidView $view) {
-		$tag = $this->tagRepository->findOneByLabel($this->tsValue('tag'));
-		if ($tag instanceof Tag) {
+		$tagIdentifier = $this->tsValue('tag');
+		if (!empty($tagIdentifier) && ($tag = $this->tagRepository->findByIdentifier($tagIdentifier)) instanceof Tag) {
 			$view->assign('assets', $this->assetRepository->findByTag($tag));
 		} else {
 			$view->assign('assets', []);

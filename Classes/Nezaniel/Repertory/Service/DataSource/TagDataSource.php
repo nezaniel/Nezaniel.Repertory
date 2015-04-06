@@ -11,6 +11,7 @@ namespace Nezaniel\Repertory\Service\DataSource;
  * The TYPO3 project - inspiring people to share!                                *
  *                                                                               */
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Persistence\Doctrine\PersistenceManager;
 use TYPO3\Flow\Persistence\QueryInterface;
 use TYPO3\Media\Domain\Model\Tag;
 use TYPO3\Neos\Service\DataSource\AbstractDataSource;
@@ -20,6 +21,12 @@ use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
  * The data source for providing the TYPO3.Neos SelectBox editor with TYPO3.Media tags
  */
 class TagDataSource extends AbstractDataSource {
+
+	/**
+	 * @var PersistenceManager
+	 * @Flow\Inject
+	 */
+	protected $persistenceManager;
 
     /**
      * @var \TYPO3\Media\Domain\Repository\TagRepository
@@ -50,7 +57,7 @@ class TagDataSource extends AbstractDataSource {
         ));
         foreach ($tagQuery->execute() as $tag) {
             /** @var Tag $tag */
-            $result[$tag->getLabel()] = $tag;
+            $result[$this->persistenceManager->getIdentifierByObject($tag)] = $tag;
         }
         return $result;
     }
