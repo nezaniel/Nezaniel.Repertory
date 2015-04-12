@@ -1,0 +1,10 @@
+namespace: TS=TYPO3.TypoScript
+namespace: Rep=Nezaniel.Repertory
+
+prototype(Rep:ShiteWhatDoWePlayNext) < prototype(Content) {
+	@class = 'Nezaniel\\Repertory\\TypoScriptObjects\\TagBasedAssetListImplementation'
+
+	tag = ${q(documentNode).property('tag')}
+	assets = ${this.assets}
+
+}

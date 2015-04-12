@@ -1,3 +1,10 @@
+'Nezaniel.Repertory:ShiteWhatDoWePlayNext':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Shite, what do we play next?'
+    icon: 'icon-music'
+
 'Nezaniel.Repertory:Intro':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Text'

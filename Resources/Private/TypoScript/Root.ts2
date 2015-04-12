@@ -6,6 +6,7 @@ include: Prototypes/Bridge.ts2
 include: Prototypes/DownloadList.ts2
 include: Prototypes/Intro.ts2
 include: Prototypes/Refrain.ts2
+include: Prototypes/ShiteWhatDoWePlayNext.ts2
 include: Prototypes/TrackList.ts2
 include: Prototypes/Verse.ts2
 
