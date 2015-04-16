@@ -1,0 +1,29 @@
+trackAggregation < page {
+    body {
+        parts {
+            lowerDisplay {
+                templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/TrackAggregation.html'
+
+                tracks = TS:Collection {
+                    collection = ${q(documentNode).find('[instanceof Nezaniel.Repertory:Track]')}
+                    itemName = 'track'
+                    itemRenderer = TS:Template {
+                        templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track/ListItem.html'
+
+                        track = ${track}
+                        title = ${q(track).property('title')}
+                        orchestration = ${q(track).property('orchestration')}
+                        singAlong = ${q(track).property('singAlong')}
+                        difficulty = ${q(track).property('difficulty')}
+                        awesomeness = ${q(track).property('awesomeness')}
+                        key = ${q(track).property('key')}
+                        emotionType = ${q(track).property('emotionType')}
+                        annotations = ContentCollection {
+                            @override.contentCollectionNode = ${Neos.Node.nearestContentCollection(track, 'main')}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

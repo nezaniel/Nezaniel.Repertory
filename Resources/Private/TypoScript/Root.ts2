@@ -2,6 +2,9 @@ namespace: TS=TYPO3.TypoScript
 namespace: Nodes=TYPO3.Neos.NodeTypes
 namespace: Rep=Nezaniel.Repertory
 
+include: RenderPaths/Track.ts2
+include: RenderPaths/TrackAggregation.ts2
+
 include: Prototypes/Bridge.ts2
 include: Prototypes/DownloadList.ts2
 include: Prototypes/Intro.ts2
@@ -10,7 +13,6 @@ include: Prototypes/ShiteWhatDoWePlayNext.ts2
 include: Prototypes/TrackList.ts2
 include: Prototypes/Verse.ts2
 
-# Declare path mapping for custom document types
 root {
 	track {
 		condition = ${q(node).is('[instanceof Nezaniel.Repertory:Track]')}
@@ -19,56 +21,5 @@ root {
 	trackAggregation {
 		condition = ${q(node).is('[instanceof Nezaniel.Repertory:TrackAggregation]')}
 		renderPath = '/trackAggregation'
-	}
-}
-
-track < page {
-	body {
-		parts {
-			lowerDisplay {
-				templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track.html'
-
-				title = ${q(documentNode).property('title')}
-				orchestration = ${q(documentNode).property('orchestration')}
-				key = ${q(documentNode).property('key')}
-				awesomeness = ${q(documentNode).property('awesomeness')}
-				emotionType = ${q(documentNode).property('emotionType')}
-				difficulty = ${q(documentNode).property('difficulty')}
-				singAlong = ${q(documentNode).property('singAlong')}
-				verses = ContentCollection {
-					nodePath = 'verses'
-				}
-				downloadList = Rep:DownloadList
-			}
-		}
-	}
-}
-trackAggregation < page {
-	body {
-		parts {
-			lowerDisplay {
-				templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/TrackAggregation.html'
-
-				tracks = TS:Collection {
-					collection = ${q(documentNode).find('[instanceof Nezaniel.Repertory:Track]')}
-					itemName = 'track'
-					itemRenderer = TS:Template {
-						templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track/ListItem.html'
-
-						track = ${track}
-						title = ${q(track).property('title')}
-						orchestration = ${q(track).property('orchestration')}
-						singAlong = ${q(track).property('singAlong')}
-						difficulty = ${q(track).property('difficulty')}
-						awesomeness = ${q(track).property('awesomeness')}
-						key = ${q(track).property('key')}
-						emotionType = ${q(track).property('emotionType')}
-						annotations = ContentCollection {
-							@override.contentCollectionNode = ${Neos.Node.nearestContentCollection(track, 'main')}
-						}
-					}
-				}
-			}
-		}
 	}
 }
