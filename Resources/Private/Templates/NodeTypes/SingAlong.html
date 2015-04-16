@@ -1,0 +1,14 @@
+<f:if condition="{tracks}">
+	<f:then>
+		<ul>
+			{tracks -> f:format.raw()}
+		</ul>
+	</f:then>
+	<f:else>
+		<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
+			<f:if condition="{node.context.workspace.name} != 'live'">
+				<p{attributes -> f:format.raw()}>Empty sing along list</p>
+			</f:if>
+		</f:security.ifAccess>
+	</f:else>
+</f:if>

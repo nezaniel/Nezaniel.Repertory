@@ -39,3 +39,16 @@ prototype(Rep:TrackList) < prototype(Content) {
 		}
 	}
 }
+
+prototype(Rep:SingAlong) < prototype(Content) {
+    tracks = TS:Collection {
+        collection = ${q(site).find('[instanceof Nezaniel.Repertory:Track]').filter('[singAlong = true]')}
+        itemName = 'track'
+        itemRenderer = TS:Template {
+            templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track/SingAlongItem.html'
+
+            track = ${track}
+            title = ${q(track).property('title')}
+        }
+    }
+}

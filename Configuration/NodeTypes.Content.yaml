@@ -35,3 +35,10 @@
   ui:
     label: 'Track list'
     icon: 'icon-music'
+
+'Nezaniel.Repertory:SingAlong':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Sing along track list'
+    icon: 'icon-music'
