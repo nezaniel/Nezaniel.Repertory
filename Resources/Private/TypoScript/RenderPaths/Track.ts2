@@ -10,7 +10,7 @@ track < page {
                 awesomeness = ${q(documentNode).property('awesomeness')}
                 emotionType = ${q(documentNode).property('emotionType')}
                 difficulty = ${q(documentNode).property('difficulty')}
-                singAlong = ${q(documentNode).property('singAlong')}
+                singAlong = ${q(documentNode).property('singAlong') != 'no'}
                 verses = ContentCollection {
                     nodePath = 'verses'
                 }

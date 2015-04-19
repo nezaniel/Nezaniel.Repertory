@@ -135,12 +135,23 @@
               hard:
                 label: 'Hard'
     singAlong:
-      type: boolean
+      type: string
+      defaultValue: 'no'
       ui:
-        label: 'Sing-along'
+        label: 'Sing along'
+        reloadIfChanged: TRUE
         inspector:
           group: track
           position: 'after difficulty'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              no:
+                label: 'No'
+              refrainOnly:
+                label: 'Refrain only'
+              completely:
+                label: 'Completely'
     refrain:
       type: string
       ui:
