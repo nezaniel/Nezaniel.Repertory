@@ -1,0 +1,3 @@
+prototype(Rep:Instrumental) < prototype(Content) {
+
+}

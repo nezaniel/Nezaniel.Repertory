@@ -5,6 +5,13 @@
     label: 'Shite, what do we play next?'
     icon: 'icon-music'
 
+'Nezaniel.Repertory:Instrumental':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Instrumental'
+    icon: 'icon-music'
+
 'Nezaniel.Repertory:Intro':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Text'

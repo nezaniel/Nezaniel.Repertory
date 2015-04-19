@@ -7,6 +7,7 @@ include: RenderPaths/TrackAggregation.ts2
 
 include: Prototypes/Bridge.ts2
 include: Prototypes/DownloadList.ts2
+include: Prototypes/Instrumental.ts2
 include: Prototypes/Intro.ts2
 include: Prototypes/Refrain.ts2
 include: Prototypes/ShiteWhatDoWePlayNext.ts2

@@ -18,6 +18,7 @@
           'Nezaniel.Repertory:Intro': TRUE
           'Nezaniel.Repertory:Verse': TRUE
           'Nezaniel.Repertory:Refrain': TRUE
+          'Nezaniel.Repertory:Instrumental': TRUE
   ui:
     label: 'Track'
     icon: 'icon-music'
