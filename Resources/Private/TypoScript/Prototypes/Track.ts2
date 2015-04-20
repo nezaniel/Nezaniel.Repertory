@@ -1,0 +1,15 @@
+prototype(Rep:Track) < prototype(TS:Template) {
+    templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track.html'
+
+    title = ${q(documentNode).property('title')}
+    orchestration = ${q(documentNode).property('orchestration')}
+    key = ${q(documentNode).property('key')}
+    awesomeness = ${q(documentNode).property('awesomeness')}
+    emotionType = ${q(documentNode).property('emotionType')}
+    difficulty = ${q(documentNode).property('difficulty')}
+    singAlong = ${q(documentNode).property('singAlong') != 'no'}
+    verses = ContentCollection {
+        nodePath = 'verses'
+    }
+    downloadList = Rep:DownloadList
+}

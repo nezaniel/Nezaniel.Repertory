@@ -11,6 +11,7 @@ include: Prototypes/Instrumental.ts2
 include: Prototypes/Intro.ts2
 include: Prototypes/Refrain.ts2
 include: Prototypes/ShiteWhatDoWePlayNext.ts2
+include: Prototypes/Track.ts2
 include: Prototypes/TrackList.ts2
 include: Prototypes/Verse.ts2
 
