@@ -6,13 +6,9 @@
 			</f:for>
 		</ul>
 	</f:then>
-	<f:else>
-		<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
-			<f:if condition="{node.context.workspace.name} != 'live'">
+	<f:else><f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess"><f:if condition="{node.context.workspace.name} != 'live'">
 				<ul{attributes -> f:format.raw()}>
 					<li>Empty download list</li>
 				</ul>
-			</f:if>
-		</f:security.ifAccess>
-	</f:else>
+			</f:if></f:security.ifAccess></f:else>
 </f:if>

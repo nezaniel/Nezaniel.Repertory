@@ -1,7 +1,7 @@
 prototype(Rep:DownloadList) < prototype(Nodes:AssetList) {
 	@class = 'Nezaniel\\Repertory\\TypoScriptObjects\\TagBasedAssetListImplementation'
+	templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/DownloadList.html'
 
 	tag = ${q(documentNode).property('tag')}
 	assets = ${this.assets}
-
 }
