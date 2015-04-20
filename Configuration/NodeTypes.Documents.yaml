@@ -94,7 +94,7 @@
                 label: 'Legendary'
     emotionType:
       type: string
-      defaultValue: 'party'
+      defaultValue: 'neutral'
       ui:
         label: 'Type of Emotion'
         reloadIfChanged: TRUE
@@ -104,6 +104,8 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              neutral:
+                label: 'Neutral'
               party:
                 label: 'Party'
               partyPosing:
