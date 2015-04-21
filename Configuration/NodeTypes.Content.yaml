@@ -35,6 +35,14 @@
     - 'TYPO3.Neos:Content'
   ui:
     label: 'Refrain'
+    icon: 'icon-refresh'
+
+'Nezaniel.Repertory:Refrain2':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Refrain 2'
+    icon: 'icon-refresh'
 
 'Nezaniel.Repertory:TrackList':
   superTypes:

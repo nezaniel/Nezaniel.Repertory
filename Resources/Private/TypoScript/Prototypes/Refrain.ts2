@@ -1,3 +1,8 @@
 prototype(Rep:Refrain) < prototype(Content) {
 	refrain = ${q(documentNode).property('refrain')}
 }
+
+prototype(Rep:Refrain2) < prototype(Content) {
+    templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Refrain.html'
+    refrain = ${q(documentNode).property('refrain2')}
+}

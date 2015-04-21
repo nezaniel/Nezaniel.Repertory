@@ -18,6 +18,7 @@
           'Nezaniel.Repertory:Intro': TRUE
           'Nezaniel.Repertory:Verse': TRUE
           'Nezaniel.Repertory:Refrain': TRUE
+          'Nezaniel.Repertory:Refrain2': TRUE
           'Nezaniel.Repertory:Instrumental': TRUE
   ui:
     label: 'Track'
@@ -173,6 +174,18 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             rows: 5
+    refrain2:
+      type: string
+      ui:
+        label: 'Refrain 2'
+        inlineEditable: TRUE
+        reloadIfChanged: TRUE
+        inspector:
+          group: track
+          position: 'after refrain'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 5
     state:
       type: string
       defaultValue: 'wip'
@@ -181,7 +194,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: track
-          position: 'after refrain'
+          position: 'after refrain2'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
