@@ -1,1 +1,12 @@
-<li>{title}</li>
+<div class="singAlongTrack__container">
+	<a id="{identifier}" class="singAlongTrack__anchor"></a>
+	<h2>{title}</h2>
+	<f:if condition="{refrain}">
+		<h3>Refrain:</h3>
+		{refrain -> f:format.nl2br()}
+	</f:if>
+	<f:if condition="{verses}">
+		<h3>Verses:</h3>
+		{verses -> f:format.raw()}
+	</f:if>
+</div>

@@ -1,8 +1,6 @@
 <f:if condition="{tracks}">
 	<f:then>
-		<ul>
-			{tracks -> f:format.raw()}
-		</ul>
+		{tracks -> f:format.raw()}
 	</f:then>
 	<f:else>
 		<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">

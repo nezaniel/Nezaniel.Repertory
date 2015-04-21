@@ -47,6 +47,25 @@ prototype(Rep:SingAlong) < prototype(Content) {
 
             track = ${track}
             title = ${q(track).property('shortTitle') ? q(track).property('shortTitle'): q(track).property('title')}
+            identifier = ${track.identifier}
+            verses = ContentCollection {
+                @override.contentCollectionNode = ${q(track).children('verses').get(0)}
+                @process.contentElementWrapping >
+                @if.onlyIfCompletelySingAlong = ${q(track).property('singAlong') == 'completely'}
+            }
+            refrain = ${q(track).property('refrain')}
+
+            @cache {
+                entryTags {
+                    track = ${'NodeType_Nezaniel.Repertory:Track'}
+                }
+            }
+        }
+    }
+
+    @cache {
+        entryTags {
+            track = ${'NodeType_Nezaniel.Repertory:Track'}
         }
     }
 }
