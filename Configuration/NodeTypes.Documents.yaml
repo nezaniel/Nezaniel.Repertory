@@ -37,6 +37,13 @@
       ui:
         inspector:
           group: track
+    shortTitle:
+      type: string
+      ui:
+        label: 'Short title'
+        inspector:
+          group: track
+          position: 'after title'
     tag:
       type: string
       ui:
@@ -44,7 +51,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: track
-          position: 'after title'
+          position: 'after shortTitle'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'nezaniel-repertory-tags'
@@ -126,7 +133,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: track
-          position: 'after typeOfEmotion'
+          position: 'after emotionType'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:

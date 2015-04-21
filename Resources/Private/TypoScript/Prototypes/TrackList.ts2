@@ -46,7 +46,7 @@ prototype(Rep:SingAlong) < prototype(Content) {
             templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track/SingAlongItem.html'
 
             track = ${track}
-            title = ${q(track).property('title')}
+            title = ${q(track).property('shortTitle') ? q(track).property('shortTitle'): q(track).property('title')}
         }
     }
 }
