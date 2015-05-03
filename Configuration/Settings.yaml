@@ -3,3 +3,8 @@ TYPO3:
     typoScript:
       autoInclude:
         'Nezaniel.Repertory': TRUE
+    nodeTypes:
+      groups:
+        repertory:
+          position: 'after general'
+          label: 'Repertory'

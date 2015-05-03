@@ -1,9 +1,22 @@
+'TYPO3.Neos:Page':
+  childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          'Nezaniel.Repertory:Bridge': FALSE
+          'Nezaniel.Repertory:Intro': FALSE
+          'Nezaniel.Repertory:Verse': FALSE
+          'Nezaniel.Repertory:Refrain': FALSE
+          'Nezaniel.Repertory:Refrain2': FALSE
+          'Nezaniel.Repertory:Instrumental': FALSE
+
 'Nezaniel.Repertory:TrackAggregation':
   superTypes:
     - 'TYPO3.Neos:Document'
   ui:
     label: 'Track Aggregation'
     icon: 'icon-folder-open'
+    group: repertory
 
 'Nezaniel.Repertory:Track':
   superTypes:
@@ -23,6 +36,7 @@
   ui:
     label: 'Track'
     icon: 'icon-music'
+    group: repertory
     inspector:
       tabs:
         track:

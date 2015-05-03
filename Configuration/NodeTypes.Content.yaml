@@ -4,6 +4,7 @@
   ui:
     label: 'Shite, what do we play next?'
     icon: 'icon-music'
+    group: repertory
 
 'Nezaniel.Repertory:Instrumental':
   superTypes:
@@ -11,24 +12,28 @@
   ui:
     label: 'Instrumental'
     icon: 'icon-music'
+    group: repertory
 
 'Nezaniel.Repertory:Intro':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Text'
   ui:
     label: 'Intro'
+    group: repertory
 
 'Nezaniel.Repertory:Verse':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Text'
   ui:
     label: 'Verse'
+    group: repertory
 
 'Nezaniel.Repertory:Bridge':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Text'
   ui:
     label: 'Bridge'
+    group: repertory
 
 'Nezaniel.Repertory:Refrain':
   superTypes:
@@ -36,6 +41,7 @@
   ui:
     label: 'Refrain'
     icon: 'icon-refresh'
+    group: repertory
 
 'Nezaniel.Repertory:Refrain2':
   superTypes:
@@ -43,6 +49,7 @@
   ui:
     label: 'Refrain 2'
     icon: 'icon-refresh'
+    group: repertory
 
 'Nezaniel.Repertory:TrackList':
   superTypes:
@@ -50,6 +57,7 @@
   ui:
     label: 'Track list'
     icon: 'icon-music'
+    group: repertory
 
 'Nezaniel.Repertory:SingAlong':
   superTypes:
@@ -57,3 +65,4 @@
   ui:
     label: 'Sing along track list'
     icon: 'icon-music'
+    group: repertory
