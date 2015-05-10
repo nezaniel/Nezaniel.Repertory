@@ -24,6 +24,10 @@
 		</f:else>
 	</f:if>
 	{downloadList -> f:format.raw()}
+	<f:if condition="{backLink}">
+		<h3>Gig</h3>
+		<neos:link.node node="{backLink}" arguments="{playedItem: backLink.identifier}">We played that shite.</neos:link.node>
+	</f:if>
 </f:section>
 </body>
 </html>

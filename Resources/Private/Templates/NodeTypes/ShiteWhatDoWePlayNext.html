@@ -1,38 +1,30 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<f:section name="lowerDisplay">
-	<f:if condition="{tracks}">
-		<f:then>
-			<table>
-				<thead>
-				<tr>
-					<th>Title</th>
-					<th>Orchestration</th>
-					<th>Sing-along</th>
-					<th>Difficulty</th>
-					<th>Awesomeness</th>
-					<th>Type of emotion</th>
-					<th>Key</th>
-					<th>State</th>
-					<th>Annotations</th>
-				</tr>
-				</thead>
-				<tbody>
-				{tracks -> f:format.raw()}
-				</tbody>
-			</table>
-		</f:then>
-		<f:else>
-			<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
-				<f:if condition="{node.context.workspace.name} != 'live'">
-					<p{attributes -> f:format.raw()}>Empty track aggregation</p>
-				</f:if>
-			</f:security.ifAccess>
-		</f:else>
-	</f:if>
-</f:section>
-</body>
-</html>
+<f:if condition="{track}">
+	<f:then>
+		<h2>{title -> f:format.raw()}</h2>
+		<neos:link.node node="{track}">We want to play that shite.</neos:link.node><br/>
+		<br/>
+		<neos:link.node arguments="{awesomeness: currentAwesomeness, emotionType: currentEmotionType, postponedTrack: track.identifier}">We don't want to play that shite.</neos:link.node><br/>
+		<br/>
+		<hr />
+		<br />
+		We want something <f:for each="{degreesOfAwesomeness}" as="awesomeness"><neos:link.node arguments="{awesomeness: awesomeness, emotionType: currentEmotionType}">{awesomeness}</neos:link.node> | </f:for><neos:link.node arguments="{awesomeness: '*', emotionType: currentEmotionType}">any</neos:link.node><br />
+		<br />
+		We want something <f:for each="{emotionTypes}" as="emotionType"><neos:link.node arguments="{awesomeness: currentAwesomeness, emotionType: emotionType}">{emotionType}</neos:link.node> | </f:for><neos:link.node arguments="{awesomeness: currentAwesomeness, emotionType: '*'}">any</neos:link.node><br />
+		<br />
+		<hr/>
+		<br/>
+		<neos:link.node arguments="{restartGig : 1}">Start a new gig</neos:link.node>
+		<br/>
+	</f:then>
+	<f:else>
+		<neos:link.node>Anything</neos:link.node><br/>
+		<br/>
+		<hr/>
+		<br/>
+		<neos:link.node arguments="{restartGig : 1}">Start a new gig</neos:link.node>
+		<br/>
+	</f:else>
+</f:if>
+
+

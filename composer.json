@@ -4,7 +4,8 @@
     "description": "A Neos package for managing your repertory",
     "require": {
         "typo3/neos": "1.2.*",
-        "typo3/neos-nodetypes": "1.2.*"
+        "typo3/neos-nodetypes": "1.2.*",
+        "typo3/typo3cr-search": "1.2.*"
     },
     "autoload": {
         "psr-0": {

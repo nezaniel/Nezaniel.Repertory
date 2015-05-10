@@ -1,6 +1,22 @@
 prototype(Rep:ShiteWhatDoWePlayNext) < prototype(Content) {
-	@class = 'Nezaniel\\Repertory\\TypoScriptObjects\\TagBasedAssetListImplementation'
+	@override.track = ${this.trackProposal}
+	@class = 'Nezaniel\\Repertory\\TypoScriptObjects\\GigManagerImplementation'
 
-	tag = ${q(documentNode).property('tag')}
-	assets = ${this.assets}
+	track = ${track}
+	title = ${q(track).property('shortTitle') ? q(track).property('shortTitle') : track.label}
+
+	degreesOfAwesomeness = ${['common', 'uncommon', 'rare', 'epic', 'legendary']}
+	currentAwesomeness = ${request.arguments.awesomeness ? request.arguments.awesomeness : '*'}
+	emotionTypes = ${['neutral', 'partyPosing', 'party', 'battle', 'dream', 'valleyOfTears', 'severe']}
+	currentEmotionType = ${request.arguments.emotionType ? request.arguments.emotionType : '*'}
+
+	@cache {
+		mode = 'uncached'
+
+		context {
+			site = 'site'
+			documentNode = 'documentNode'
+			node = 'node'
+		}
+	}
 }

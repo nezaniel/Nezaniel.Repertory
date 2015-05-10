@@ -114,6 +114,10 @@
                 label: 'Epic'
               legendary:
                 label: 'Legendary'
+      search:
+        elasticSearchMapping:
+          type: 'string'
+          index: 'not_analyzed'
     emotionType:
       type: string
       defaultValue: 'neutral'
@@ -140,6 +144,10 @@
                 label: 'Valley of Tears'
               severe:
                 label: 'Severe'
+      search:
+        elasticSearchMapping:
+          type: 'string'
+          index: 'not_analyzed'
     difficulty:
       type: string
       defaultValue: 'normal'
@@ -158,6 +166,10 @@
                 label: 'Normal'
               hard:
                 label: 'Hard'
+      search:
+        elasticSearchMapping:
+          type: 'string'
+          index: 'not_analyzed'
     singAlong:
       type: string
       defaultValue: 'no'
@@ -220,3 +232,7 @@
                 label: 'Text missing'
               complete:
                 label: 'Complete'
+      search:
+        elasticSearchMapping:
+          type: 'string'
+          index: 'not_analyzed'

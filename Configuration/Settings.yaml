@@ -8,3 +8,7 @@ TYPO3:
         repertory:
           position: 'after general'
           label: 'Repertory'
+  Flow:
+    session:
+      # We don't want our session to expire since gig data is stored there
+      inactivityTimeout: 0

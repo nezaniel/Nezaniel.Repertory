@@ -1,6 +1,7 @@
 prototype(Rep:Track) < prototype(TS:Template) {
     templatePath = 'resource://Nezaniel.Repertory/Private/Templates/NodeTypes/Track.html'
 
+	track = ${documentNode}
     title = ${q(documentNode).property('title')}
     orchestration = ${q(documentNode).property('orchestration')}
     key = ${q(documentNode).property('key')}
@@ -11,5 +12,9 @@ prototype(Rep:Track) < prototype(TS:Template) {
     verses = ContentCollection {
         nodePath = 'verses'
     }
+	versesPresent = ${q(documentNode).children('verses').find('[instanceof Nezaniel.Repertory:Verse]').count() > 0}
     downloadList = Rep:DownloadList
+
+	shiteWhatDoWePlayNextNodes = ${Search.query(site).nodeType('Nezaniel.Repertory:ShiteWhatDoWePlayNext').execute()}
+	backLink = ${q(this.shiteWhatDoWePlayNextNodes).count() > 0 ? q(q(this.shiteWhatDoWePlayNextNodes).get(0)).closest('[instanceof TYPO3.Neos:Document]').get(0) : FALSE}
 }
